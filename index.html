@@ -17,6 +17,7 @@
     <!-- Custom CSS -->
     <link href="css/scrolling-nav.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Yantramanav:100" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -29,9 +30,18 @@
 <!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
 
 <body class="background" id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <div class="se-pre-con"></div>
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top nav-justified" role="navigation">
         <div class="container align">  
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse align">
                 <ul class="nav nav-pills nav-justified">
@@ -40,13 +50,14 @@
                         <p class="align" >
                             <img class="align top" src="images/headshot.jpg">
                             Jason Lin
+                            <!-- <a class="navbar-brand page-scroll" href="#page-top">Jason Lin</a> -->
                         </p>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">Games</a>
+                        <a class="page-scroll" href="#games">Games</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">Projects</a>
+                        <a class="page-scroll" href="#projects">Projects</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
@@ -73,7 +84,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about-section changewidth">
+    <section id="games" class="about-section changewidth">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -84,7 +95,7 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="services-section changewidth">
+    <section id="projects" class="services-section changewidth">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
