@@ -222,7 +222,7 @@ function update() {
 			}
 			powerUps.splice(k,1);
 		}	
-		if (powerUps[k] <= (0 - powerUps[k].width)) {
+		if (powerups[k] != undefined && powerUps[k] <= (0 - powerUps[k].width)) {
 			powerUps.splice(k,1);
 		}
 	}
@@ -444,7 +444,6 @@ function clickPlay(e) {
 	}
 	var x = e.clientX;
 	var y = e.clientY;
-	console.log(x + " , " + y)
 	if (x >= playRect.x && x <= playRect.x + playRect.width && y >= playRect.y && y <= playRect.y + playRect.height) {
 		window.removeEventListener("touchstart",clickPlay, false);
 		window.removeEventListener("click",clickPlay, false);
