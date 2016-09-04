@@ -4,7 +4,6 @@
 */
 Parse.initialize("RBsotC2LiGjEDRYfv3ycXfLMg9nACJIcHVZBFqQ6", "ZLlLg5Ed0PHWfLIXaSkzyas5QGNzWOTfH6zBFNfe");
 var canvas = document.getElementById("mainCanvas");
-console.log(canvas)
 var context = canvas.getContext("2d");
 
 var keys = [];
@@ -439,13 +438,13 @@ function clickBack(e) {
 }
 
 function clickPlay(e) {
-	console.log("clicked play");
 	window.removeEventListener("touchstart", initTouch, false);
 	if (touchMode) {
 		e = e.changedTouches[0];
 	}
 	var x = e.clientX;
 	var y = e.clientY;
+	console.log(x + " , " + y)
 	if (x >= playRect.x && x <= playRect.x + playRect.width && y >= playRect.y && y <= playRect.y + playRect.height) {
 		window.removeEventListener("touchstart",clickPlay, false);
 		window.removeEventListener("click",clickPlay, false);
