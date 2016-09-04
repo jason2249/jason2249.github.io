@@ -222,7 +222,7 @@ function update() {
 			}
 			powerUps.splice(k,1);
 		}	
-		if (powerups[k] != undefined && powerUps[k] <= (0 - powerUps[k].width)) {
+		if (powerUps[k] <= (0 - powerUps[k].width)) {
 			powerUps.splice(k,1);
 		}
 	}
