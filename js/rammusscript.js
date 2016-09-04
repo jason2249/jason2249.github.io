@@ -4,6 +4,7 @@
 */
 Parse.initialize("RBsotC2LiGjEDRYfv3ycXfLMg9nACJIcHVZBFqQ6", "ZLlLg5Ed0PHWfLIXaSkzyas5QGNzWOTfH6zBFNfe");
 var canvas = document.getElementById("mainCanvas");
+console.log(canvas)
 var context = canvas.getContext("2d");
 
 var keys = [];
@@ -438,6 +439,7 @@ function clickBack(e) {
 }
 
 function clickPlay(e) {
+	console.log("clicked play");
 	window.removeEventListener("touchstart", initTouch, false);
 	if (touchMode) {
 		e = e.changedTouches[0];
