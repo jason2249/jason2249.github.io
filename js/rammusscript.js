@@ -55,32 +55,31 @@ var font = "Herculanum";
 var title = new Image();
 title.src = "https://i.imgur.com/pB0ntib.png";
 var rammus = new Image();
-rammus.src = "http://i.imgur.com/KSqIEBc.png";
+rammus.src = "https://i.imgur.com/KSqIEBc.png";
 var life = new Image();
-life.src = "http://i.imgur.com/WWuKQ2U.png";
+life.src = "https://i.imgur.com/WWuKQ2U.png";
 var ground = new Image();
-ground.src = "http://i.imgur.com/pzU4s50.png";
+ground.src = "https://i.imgur.com/pzU4s50.png";
 var sky = new Image();
-sky.src = "http://i.imgur.com/16S4PlL.png";
+sky.src = "https://i.imgur.com/16S4PlL.png";
 var meleeMinion = new Image();
-meleeMinion.src = "http://i.imgur.com/X3VXZhh.png";
+meleeMinion.src = "https://i.imgur.com/X3VXZhh.png";
 var casterMinion = new Image();
-casterMinion.src = "http://i.imgur.com/8FKQlEF.png";
+casterMinion.src = "https://i.imgur.com/8FKQlEF.png";
 var instructionCaster = new Image();
-instructionCaster.src = "http://i.imgur.com/DRooCNk.png";
+instructionCaster.src = "https://i.imgur.com/DRooCNk.png";
 var heal = new Image();
-heal.src = "http://i.imgur.com/TN8WKey.png";
+heal.src = "https://i.imgur.com/TN8WKey.png";
 var intervention = new Image();
-intervention.src = "http://i.imgur.com/2ece4h0.png";
+intervention.src = "https://i.imgur.com/2ece4h0.png";
 var interventionImage = new Image();
-interventionImage.src = "http://i.imgur.com/3e7votX.png";
+interventionImage.src = "https://i.imgur.com/3e7votX.png";
 var timeWarp = new Image();
-timeWarp.src = "http://i.imgur.com/xXQ5lso.png";
+timeWarp.src = "https://i.imgur.com/xXQ5lso.png";
 
 var ok = new Audio("audio/ok.mp3");
 var arcadeMusic = new Audio("audio/arcademusic.mp3");
 arcadeMusic.loop = true;
-arcadeMusic.play();
 
 //rectangles for detecting clicks/touches
 var player = {
