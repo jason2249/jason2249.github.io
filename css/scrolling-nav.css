@@ -82,6 +82,10 @@ html {
     margin: auto;
 }
 
+#mainCanvas {
+    background-color: deepskyblue;
+}
+
 .background {
     background-image: url("https://i.imgur.com/2xvxpt8.jpg");
     background-repeat: no-repeat;
