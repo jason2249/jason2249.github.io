@@ -375,11 +375,13 @@ function main() {
 	window.addEventListener("keydown", jump, false);
 	window.addEventListener("touchstart", jump, false);
 	window.addEventListener("deviceorientation", turnPhone, false);
+	arcadeMusic.play();
 	var g = setInterval( function() {
 		if (alive) {
 			game(); 
 		} else {
 			clearInterval(g);
+			arcadeMusic.pause();
 			window.removeEventListener("touchstart", jump, false);
 			window.removeEventListener("deviceorientation", turnPhone, false);
 			for (var k = 0; k < scores.length; k++) {
