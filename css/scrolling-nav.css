@@ -77,9 +77,16 @@ html {
     color: white;
 }
 
+.whitetext, .whitetext:hover {
+    color: white;
+    target-name: new;
+    target-new: tab;
+}
+
 .changewidth {
     width: 80%;
     margin: auto;
+    opacity: .90;
 }
 
 #mainCanvas {
@@ -89,6 +96,31 @@ html {
 .imgresize {
     width: 50px;
     height: 50px;
+}
+
+.alignmid {
+    vertical-align: middle;
+}
+
+.textsize {
+    font-size: 30px;
+    clear: left;
+    padding-top: 100px;
+}
+
+.padbot {
+    padding-bottom: 30px;
+}
+
+.horalignright {
+    float: right;
+    clear: right;
+}
+
+.horalign {
+    font-size: 30px;
+    float: left;
+    clear: left;
 }
 
 .background {
