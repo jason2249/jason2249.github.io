@@ -50,7 +50,7 @@ html {
 }
 
 #colorchange {
-    font-size: 25px;
+    font-size: 3.5vmin;
     color: white;
     font-family: 'Yantramanav', sans-serif;
 }
@@ -94,7 +94,7 @@ html {
 }
 
 .textsize {
-    font-size: 30px;
+    font-size: 3.5vmin;
     clear: left;
     padding-top: 100px;
 }
@@ -109,7 +109,7 @@ html {
 }
 
 .horalign {
-    font-size: 30px;
+    font-size: 3.5vmin;
     float: left;
     clear: left;
 }
