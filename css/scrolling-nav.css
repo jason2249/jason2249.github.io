@@ -118,6 +118,10 @@ html {
     clear: left;
 }
 
+.vertalign {
+    margin-top: 20%;
+}
+
 .background {
     background-image: url("https://i.imgur.com/2xvxpt8.jpg");
     background-repeat: no-repeat;
@@ -139,24 +143,27 @@ html {
 .intro-section {
     padding-top: 19vh;
     min-height: 100vh;
+    padding-bottom: 15vh;
     text-align: center;
     background: #328CC1;
     color: white;
     font-family: 'Yantramanav', sans-serif;
 }
 
-.about-section {
+.projects-section {
     padding-top: 15vh;
     min-height: 100vh;
+    padding-bottom: 15vh;
     text-align: center;
     background: #fff;
     color: #1D2731;
     font-family: 'Yantramanav', sans-serif;
 }
 
-.services-section {
+.experience-section {
     padding-top: 15vh;
     min-height: 100vh;
+    padding-bottom: 15vh;
     text-align: center;
     background: #328CC1;
     color: white;
@@ -166,6 +173,7 @@ html {
 .contact-section {
     padding-top: 15vh;
     min-height: 100vh;
+    padding-bottom: 15vh;
     text-align: center;
     background: #fff;
     color: #1D2731;
