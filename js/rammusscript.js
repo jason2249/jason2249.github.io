@@ -2,15 +2,20 @@
 * Rammus Runner
 * @author Jason Lin
 */
-Parse.initialize("RBsotC2LiGjEDRYfv3ycXfLMg9nACJIcHVZBFqQ6", "ZLlLg5Ed0PHWfLIXaSkzyas5QGNzWOTfH6zBFNfe");
+var config = {
+	apiKey: "AIzaSyBZI4CeXaeeOcqWXNqBWRQK74WHbYd0roM",
+	authDomain: "rammusrunner.firebaseapp.com",
+	databaseURL: "https://rammusrunner.firebaseio.com",
+	storageBucket: "",
+};
+firebase.initializeApp(config);
+
 var canvas = document.getElementById("mainCanvas");
 var context = canvas.getContext("2d");
 
 var keys = [];
 var obstacles = [];
 var powerUps = [];
-var scores = [];
-var playerNames = [];
 
 var width = 500;
 var height = 400;
@@ -36,19 +41,11 @@ var isJumpingDown = false;
 var interventionActive = false;
 var timeWarpActive = false;
 
-//retrieves score array object from Parse database
-var ScoreArray = Parse.Object.extend("ScoreArray");
-var query = new Parse.Query(ScoreArray);
-var scoreArr = undefined;
-query.get("oVg6QtnKX4", {
-	success: function(scoreArray) {
-		scoreArr = scoreArray;
-		scores = scoreArray.get("scores");
-		playerNames = scoreArray.get("playerNames");
-	},
-	error: function(object, error) {
-		console.log(e.message);
-	}
+//Listener for score database
+var scores = [];
+var ScoreDB = firebase.database().ref('/');
+ScoreDB.on('value', function(snapshot) {
+	scores = snapshot.val();
 });
 
 var font = "Herculanum";
@@ -384,34 +381,31 @@ function main() {
 			arcadeMusic.pause();
 			window.removeEventListener("touchstart", jump, false);
 			window.removeEventListener("deviceorientation", turnPhone, false);
-			for (var k = 0; k < scores.length; k++) {
-				//checks if high score is achieved, then saves if true
-				if (score > scores[k]) {
+			for (var scoreIndex = 0; scoreIndex < scores.length; scoreIndex++) {
+				var leaderboardEntry = scores[scoreIndex];
+				if (score > leaderboardEntry.score) {
 					do {
 						var playerName = prompt("You have a new high score! Please enter your name.");
 						if (playerName == null) {
 							playerName = "Anonymous";
 						}
 					} while (playerName.length > 30);
-					
-					var temp = scores.length-1;					
-					while(temp > k) {
-						scores[temp] = scores[temp-1];
-						playerNames[temp] = playerNames[temp-1];
+
+					var temp = scores.length-1;
+					while (temp > scoreIndex) {
+						firebase.database().ref('/' + temp).set({
+							username: scores[temp-1].username,
+							score: scores[temp-1].score
+						});
 						temp--;
 					}
-					scores[k] = score;
-					playerNames[k] = playerName;
-					scoreArr.save(null, {
-						success: function(scoreArray) {
-							scoreArray.set("scores", scores);
-							scoreArray.set("playerNames", playerNames);
-							scoreArray.save();
-						}
+					firebase.database().ref('/' + scoreIndex).set({
+						username: playerName,
+						score: score
 					});
 					break;
 				}
-			}			
+			}
 			loseScreen();
 			numLives = 3;
 			alive = true;
@@ -578,11 +572,11 @@ function highscores() {
 	context.font = "bold 20px " + font;
 	for (var k = 0; k < scores.length; k++) {
 		context.fillText(k+1 + ". ", 50, 150 + (k*30));
-		context.fillText(scores[k], 450, 150 + (k*30));
+		context.fillText(scores[k].score, 450, 150 + (k*30));
 	}
 	context.textAlign = "left";
 	for (var k = 0; k < scores.length; k++) {
-		context.fillText(playerNames[k], 52, 150 + (k*30));
+		context.fillText(scores[k].username, 52, 150 + (k*30));
 	}
 	window.addEventListener("click", clickBack, false);
 	window.addEventListener("touchstart", clickBack, false);
